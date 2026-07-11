@@ -1,24 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
   <defs>
-    <radialGradient id="bg" cx="50%" cy="38%" r="70%">
-      <stop offset="0" stop-color="#273524"/>
-      <stop offset="0.52" stop-color="#182218"/>
-      <stop offset="1" stop-color="#0f160f"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2e563e"/>
+      <stop offset="1" stop-color="#173326"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="82%" cy="10%" r="55%">
+      <stop offset="0" stop-color="#f0d899" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#f0d899" stop-opacity="0"/>
     </radialGradient>
-    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.18"/>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#07170f" flood-opacity=".28"/>
     </filter>
-    <pattern id="texture" width="80" height="80" patternUnits="userSpaceOnUse">
-      <rect width="80" height="80" fill="transparent"/>
-      <path d="M0 40H80M40 0V80" stroke="#ffffff" stroke-opacity="0.018" stroke-width="1"/>
-      <circle cx="18" cy="23" r="1" fill="#ffffff" fill-opacity="0.025"/>
-      <circle cx="56" cy="62" r="1" fill="#000000" fill-opacity="0.05"/>
-    </pattern>
   </defs>
   <rect width="1200" height="1200" fill="url(#bg)"/>
-  <rect width="1200" height="1200" fill="url(#texture)" opacity="0.62"/>
-  <rect x="28" y="28" width="1144" height="1144" fill="none" stroke="#DED0BD" stroke-opacity="0.52" stroke-width="2"/>
-  <rect x="48" y="48" width="1104" height="1104" fill="none" stroke="#DED0BD" stroke-opacity="0.36" stroke-width="1"/>
-  <image href="monogram.svg" x="232" y="142" width="736" height="720" preserveAspectRatio="xMidYMid meet" filter="url(#softShadow)"/>
-  <text x="600" y="988" text-anchor="middle" fill="#DED0BD" font-family="'Cormorant Garamond', Georgia, serif" font-size="68" font-style="italic" letter-spacing="2">19 июля 2026</text>
+  <rect width="1200" height="1200" fill="url(#sun)"/>
+  <path d="M1015 74c-74 47-124 120-139 210 91-35 153-99 184-189-15-11-29-18-45-21Z" fill="#a9b98f" opacity=".22"/>
+  <path d="M1094 155c-84 27-151 85-189 168 96-12 171-61 222-143-10-12-21-20-33-25Z" fill="#f0d899" opacity=".15"/>
+  <path d="M84 1003c89-4 173-42 237-109-94-20-180 4-253 70 2 16 7 29 16 39Z" fill="#a9b98f" opacity=".18"/>
+  <rect x="95" y="95" width="1010" height="1010" rx="76" fill="#fff8e9" fill-opacity=".045" stroke="#fff8e9" stroke-opacity=".2" stroke-width="2"/>
+  <rect x="122" y="122" width="956" height="956" rx="58" fill="none" stroke="#f0d899" stroke-opacity=".2" stroke-dasharray="9 14" stroke-width="2"/>
+  <g filter="url(#shadow)" text-anchor="middle">
+    <text x="600" y="445" fill="#f0d899" font-family="Georgia,serif" font-size="250" font-style="italic" letter-spacing="-24">ХВ</text>
+    <path d="M360 510H535M665 510H840" stroke="#f0d899" stroke-opacity=".6" stroke-width="2"/>
+    <circle cx="600" cy="510" r="8" fill="none" stroke="#f0d899" stroke-opacity=".72" stroke-width="2"/>
+    <text x="600" y="635" fill="#fff8e9" font-family="Arial,sans-serif" font-size="38" font-weight="700" letter-spacing="10">СВАДЬБА В ДЕРЕВНЕ</text>
+    <text x="600" y="755" fill="#fff8e9" font-family="Georgia,serif" font-size="72" font-style="italic">25 июля 2026</text>
+    <text x="600" y="832" fill="#f0d899" font-family="Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="5">ЕРМО-НИКОЛАЕВКА • 15:00</text>
+    <text x="600" y="955" fill="#fff8e9" fill-opacity=".78" font-family="Georgia,serif" font-size="42" font-style="italic">Христина и Владимир</text>
+  </g>
 </svg>
