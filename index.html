@@ -1,201 +1,232 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f8f5eb">
-<title>Свадьба в деревне • ХВ</title>
-<meta name="description" content="Свадебное приглашение Христины и Владимира: 25 июля 2026, село Ермо-Николаевка.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Свадьба в деревне • ХВ">
-<meta property="og:description" content="25 июля 2026 • Ермо-Николаевка • сбор гостей в 15:00">
-<meta property="og:url" content="https://step3dlab.github.io/XB/">
-<meta property="og:image" content="https://step3dlab.github.io/XB/og-cover.svg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="1200">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Свадьба в деревне • ХВ">
-<meta name="twitter:description" content="25 июля 2026 • Ермо-Николаевка">
-<meta name="twitter:image" content="https://step3dlab.github.io/XB/og-cover.svg">
-<link rel="image_src" href="https://step3dlab.github.io/XB/og-cover.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://images.unsplash.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="village.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f7f0e5">
+  <title>Свадьба в деревне • ХВ</title>
+  <meta name="description" content="Приглашение на свадьбу Христины и Владимира: 25 июля 2026, село Ермо-Николаевка.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Свадьба в деревне • ХВ">
+  <meta property="og:description" content="25 июля 2026 • Ермо-Николаевка • сбор гостей в 15:00">
+  <meta property="og:url" content="https://step3dlab.github.io/XB/">
+  <meta property="og:image" content="https://step3dlab.github.io/XB/og-cover.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Свадьба в деревне • ХВ">
+  <meta name="twitter:description" content="25 июля 2026 • Ермо-Николаевка">
+  <meta name="twitter:image" content="https://step3dlab.github.io/XB/og-cover.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="village.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="config.js"></script>
+  <script defer src="village.js"></script>
 </head>
 <body>
 <div class="page">
-<header class="topbar">
-  <a class="brand" href="#top" aria-label="К началу"><img class="logo" src="monogram.svg" alt="ХВ"></a>
-  <div class="top-date">25 июля 2026</div>
-  <button class="burger" type="button" aria-label="Меню"><span></span></button>
-</header>
-<nav class="menu">
-  <a href="#date">Дата</a><a href="#days">Три дня</a><a href="#location">Место</a><a href="#dresscode">Что надеть</a>
-  <a href="#bring">Что взять</a><a href="#stay" data-stay-menu hidden>Ночёвка</a><a href="#gifts">Подарки</a>
-  <a href="#rsvp">Подтвердить участие</a><a href="#faq">Вопросы</a>
-</nav>
-<main id="top">
-<section class="hero">
-  <div class="hero-shade"></div>
-  <div class="hero-content">
-    <div class="hero-kicker">приглашение на свадьбу</div>
-    <h1 class="couple"><span>Христина</span><i>и</i><span>Владимир</span></h1>
-    <div class="daisy-mark" aria-hidden="true">✿</div>
-    <div class="guest"><span data-salutation>Дорогие</span> <strong data-guest-name>гости</strong></div>
-    <p class="hero-copy">Приглашаем вас на нашу тёплую летнюю свадьбу во дворе дома — с шатром, танцами, конкурсами и гуляньем от души.</p>
-  </div>
-  <div class="hero-facts">
-    <div><small>дата</small><strong>25 июля 2026</strong><span>суббота</span></div>
-    <div><small>место</small><strong>Ермо-Николаевка</strong><span>Рязанская область</span></div>
-    <div><small>формат</small><strong>Во дворе дома</strong><span>под шатром</span></div>
-  </div>
-</section>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="К началу"><img class="logo" src="monogram.svg" alt="ХВ"></a>
+    <div class="top-date">25 июля 2026</div>
+    <button class="burger" type="button" aria-label="Открыть меню"><span></span></button>
+  </header>
 
-<section class="section intro" id="date">
-  <div class="eyebrow">сохраняйте дату</div><h2 class="title">Три летних дня</h2>
-  <p class="copy">Главный день — суббота, 25 июля. Собираемся к 15:00: сначала обнимаемся, потом гуляем!</p>
-  <div class="frame calwrap">
-    <div class="caltitle">Июль 2026</div>
-    <div class="calendar">
-      <div class="day-head">Пн</div><div class="day-head">Вт</div><div class="day-head">Ср</div><div class="day-head">Чт</div><div class="day-head">Пт</div><div class="day-head">Сб</div><div class="day-head">Вс</div>
-      <div class="day muted">29</div><div class="day muted">30</div><div class="day">1</div><div class="day">2</div><div class="day">3</div><div class="day">4</div><div class="day">5</div>
-      <div class="day">6</div><div class="day">7</div><div class="day">8</div><div class="day">9</div><div class="day">10</div><div class="day">11</div><div class="day">12</div>
-      <div class="day">13</div><div class="day">14</div><div class="day">15</div><div class="day">16</div><div class="day">17</div><div class="day">18</div><div class="day">19</div>
-      <div class="day">20</div><div class="day">21</div><div class="day">22</div><div class="day">23</div><div class="day church">24</div><div class="day wedding">25</div><div class="day afterday">26</div>
-      <div class="day">27</div><div class="day">28</div><div class="day">29</div><div class="day">30</div><div class="day">31</div><div class="day muted">1</div><div class="day muted">2</div>
-    </div>
-    <div class="legend"><span><i class="l1"></i>24 — венчание</span><span><i class="l2"></i>25 — свадьба</span><span><i class="l3"></i>26 — продолжение</span></div>
-  </div>
-</section>
+  <nav class="menu" aria-label="Навигация">
+    <a href="#main-day">Основной день</a>
+    <a href="#church" data-menu-church>Венчание</a>
+    <a href="#afterparty" data-menu-afterparty>Продолжение</a>
+    <a href="#fun">Развлечения</a>
+    <a href="#dresscode">Дресс-код</a>
+    <a href="#bring">Что взять</a>
+    <a href="#location">Адрес и контакты</a>
+    <a href="#stay" data-menu-stay hidden>Ночёвка</a>
+    <a href="#rsvp">Подтверждение</a>
+  </nav>
 
-<section class="photo-count">
-  <div class="photo-count-shade"></div>
-  <div class="count-content">
-    <div class="eyebrow light-text">до нашей встречи</div><h2 class="title light-text">Осталось</h2>
-    <div class="count-row">
-      <div class="count"><strong data-days>—</strong><span>дней</span></div><div class="count"><strong data-hours>—</strong><span>часов</span></div>
-      <div class="count"><strong data-minutes>—</strong><span>минут</span></div><div class="count"><strong data-seconds>—</strong><span>секунд</span></div>
-    </div>
-  </div>
-</section>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-shade"></div>
+      <span class="hero-daisies" aria-hidden="true"></span>
+      <div class="hero-inner">
+        <div class="hero-card glass-card">
+          <div class="hero-kicker">приглашение на свадьбу</div>
+          <h1 class="couple"><span>Христина</span><i>и</i><span>Владимир</span></h1>
+          <div class="guest"><span data-salutation>Дорогие</span> <strong data-guest-name>гости</strong></div>
+          <p class="hero-copy" data-hero-copy>Ждём вас 25 июля 2026 года на нашей свадьбе в селе Ермо-Николаевка. Праздник пройдёт во дворе дома, в шатре.</p>
+        </div>
 
-<section class="section days-section" id="days">
-  <div class="eyebrow">без строгого расписания</div><h2 class="title">Три дня праздника</h2>
-  <p class="copy">У нас не тайминг, а настроение. Вот главное, что нужно знать.</p>
-  <div class="days">
-    <article class="day-card">
-      <div class="day-date">24 июля</div><div class="day-photo church-photo" role="img" aria-label="Летний храм"></div>
-      <div class="day-body"><div class="day-badge">время сообщим позже</div><h3>Венчание</h3>
-      <p>В храме села Высокие Поляны состоится наше венчание. Все желающие присоединиться к таинству могут приехать поддержать нас. Следите за обновлением приглашения.</p>
-      <a class="text-link" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=%D0%A5%D1%80%D0%B0%D0%BC%20%D1%81%D0%B5%D0%BB%D0%BE%20%D0%92%D1%8B%D1%81%D0%BE%D0%BA%D0%B8%D0%B5%20%D0%9F%D0%BE%D0%BB%D1%8F%D0%BD%D1%8B%20%D0%A0%D1%8F%D0%B7%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C">Открыть карту →</a></div>
-    </article>
-    <article class="day-card main-day">
-      <div class="day-date">25 июля</div><div class="day-photo tent-photo" role="img" aria-label="Летний свадебный шатёр"></div>
-      <div class="day-body"><div class="day-badge">сбор гостей в 15:00</div><h3>Главный день</h3>
-      <p>Встречаемся во дворе дома под шатром. Будем общаться, вкусно есть, танцевать, участвовать в конкурсах и пользоваться всеми деревенскими радостями. Просьба одна: быть весёлыми и не отсиживаться!</p></div>
-    </article>
-    <article class="day-card">
-      <div class="day-date">26 июля</div><div class="day-photo meadow-photo" role="img" aria-label="Ромашковое поле"></div>
-      <div class="day-body"><div class="day-badge">кто во сколько хочет</div><h3>Продолжение</h3>
-      <p>Второй день — для всех желающих. Бассейн, чан, баня, волейбол и спокойное продолжение праздника. Просыпайтесь, приезжайте и присоединяйтесь тогда, когда вам удобно.</p></div>
-    </article>
-  </div>
-</section>
+        <div class="hero-facts glass-card">
+          <div class="fact"><i data-lucide="calendar-days"></i><small>дата</small><strong>25 июля 2026</strong><span>суббота</span></div>
+          <div class="fact"><i data-lucide="map-pin"></i><small>адрес</small><strong>Строителей, 8</strong><span>Ермо-Николаевка</span></div>
+          <div class="fact"><i data-lucide="tent-tree"></i><small>формат</small><strong>Во дворе дома</strong><span>под шатром</span></div>
+        </div>
+      </div>
+    </section>
 
-<section class="section location-section" id="location">
-  <div class="location-photo" role="img" aria-label="Летняя деревня и поле"></div>
-  <div class="location-content">
-    <div class="eyebrow">куда ехать</div><h2 class="title align-left">Место встречи</h2>
-    <p class="location-lead">Рязанская область,<br><strong>село Ермо-Николаевка</strong>,<br>улица Строителей, дом 8</p>
-    <p class="body-copy">Сбор гостей 25 июля в 15:00. Машину можно будет оставить во дворе.</p>
-    <a class="btn primary" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=%D0%A0%D1%8F%D0%B7%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C%2C%20%D1%81%D0%B5%D0%BB%D0%BE%20%D0%95%D1%80%D0%BC%D0%BE-%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%BA%D0%B0%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%2C%208">Построить маршрут</a>
-  </div>
-</section>
+    <section class="section countdown-section">
+      <div class="eyebrow">до основного дня</div>
+      <h2 class="title">Осталось</h2>
+      <div class="count-row">
+        <div class="count"><strong data-days>—</strong><span>дней</span></div>
+        <div class="count"><strong data-hours>—</strong><span>часов</span></div>
+        <div class="count"><strong data-minutes>—</strong><span>минут</span></div>
+        <div class="count"><strong data-seconds>—</strong><span>секунд</span></div>
+      </div>
+    </section>
 
-<section class="section editorial" id="dresscode">
-  <div class="editorial-photo dress-photo" role="img" aria-label="Ромашки в летнем поле"></div>
-  <div class="editorial-copy">
-    <div class="eyebrow">дресс-код</div><h2 class="title align-left">Летняя свобода</h2>
-    <p><strong>Цветов и обязательной палитры нет.</strong> Выбирайте любой летний образ, в котором удобно отдыхать и танцевать: лёгкие платья, сарафаны, рубашки, шорты — всё подходит.</p>
-    <p>Проверьте прогноз перед поездкой. Если ожидается прохлада или дождь, захватите тёплую вещь, дождевик или зонт.</p>
-    <p class="note">Высокие и тонкие каблуки лучше оставить дома: ходить будем по земле и траве.</p>
-  </div>
-</section>
+    <section class="section main-day-section" id="main-day">
+      <article class="photo-card">
+        <div class="photo main-day-photo" role="img" aria-label="Двор в деревне"></div>
+        <div class="content-card">
+          <div class="eyebrow align-left">основной день</div>
+          <h2 class="title align-left">25 июля</h2>
+          <div class="detail-list">
+            <div><i data-lucide="clock-3"></i><span><strong>Сбор гостей — 15:00.</strong></span></div>
+            <div><i data-lucide="map-pinned"></i><span>Рязанская область, село Ермо-Николаевка, улица Строителей, дом 8.</span></div>
+            <div><i data-lucide="tent-tree"></i><span>Праздник пройдёт во дворе дома, в шатре.</span></div>
+            <div><i data-lucide="car-front"></i><span>Машины можно оставить во дворе.</span></div>
+          </div>
+          <a class="btn primary" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=%D0%A0%D1%8F%D0%B7%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C%2C%20%D1%81%D0%B5%D0%BB%D0%BE%20%D0%95%D1%80%D0%BC%D0%BE-%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%BA%D0%B0%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%2C%208"><i data-lucide="navigation"></i><span>Построить маршрут</span></a>
+        </div>
+      </article>
+    </section>
 
-<section class="section bring-section" id="bring">
-  <div class="bring-copy">
-    <div class="eyebrow">собираем сумку</div><h2 class="title align-left">Что взять с собой</h2>
-    <ul class="checklist">
-      <li><strong>Купальник или плавки</strong><span>для бассейна и чана</span></li>
-      <li><strong>Личное полотенце</strong><span>для воды и бани</span></li>
-      <li><strong>Тапочки и сменную обувь</strong><span>чтобы было удобно весь день</span></li>
-      <li><strong>Тёплую вещь</strong><span>и дождевик или зонт по прогнозу</span></li>
-      <li><strong>Немного наличных</strong><span>чтобы весёлые конкурсы не прошли мимо</span></li>
-    </ul>
-  </div>
-  <div class="bring-photo" role="img" aria-label="Летняя шляпа и ромашки"></div>
-</section>
+    <section class="section optional-section" id="church" data-section-church>
+      <article class="simple-card daisy-card">
+        <div class="icon-title"><span class="icon-box"><i data-lucide="church"></i></span><div><div class="eyebrow align-left">для желающих</div><h2 class="title align-left">Венчание</h2></div></div>
+        <p class="lead-text">24 июля 2026 года в храме села Высокие Поляны.</p>
+        <p class="body-copy">Точное время сообщим позже. Все желающие могут приехать и поддержать нас.</p>
+        <a class="btn secondary" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=%D0%A5%D1%80%D0%B0%D0%BC%20%D1%81%D0%B5%D0%BB%D0%B0%20%D0%92%D1%8B%D1%81%D0%BE%D0%BA%D0%B8%D0%B5%20%D0%9F%D0%BE%D0%BB%D1%8F%D0%BD%D1%8B%20%D0%A0%D1%8F%D0%B7%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C"><i data-lucide="map"></i><span>Открыть карту</span></a>
+      </article>
+    </section>
 
-<section class="fun-photo-section">
-  <div class="fun-photo-shade"></div>
-  <div class="fun-content">
-    <div class="eyebrow light-text">будем гулять</div><h2 class="title light-text">Бассейн, чан, баня и волейбол</h2>
-    <p>И конечно — танцы, конкурсы и деревенская свадебная суета. Берите хорошее настроение и немного наличных: некоторые конкурсы будут с народным сбором средств!</p>
-  </div>
-</section>
+    <section class="section afterparty-section" id="afterparty" data-section-afterparty>
+      <article class="photo-card">
+        <div class="photo continuation-photo" role="img" aria-label="Бассейн и река"></div>
+        <div class="content-card">
+          <div class="eyebrow align-left">для желающих</div>
+          <h2 class="title align-left">Продолжение 26 июля</h2>
+          <p class="body-copy">Общего времени сбора нет. Приезжайте, когда вам удобно. Будут бассейн, баня, чан и волейбол.</p>
+        </div>
+      </article>
+    </section>
 
-<section class="section stay-section" id="stay" hidden>
-  <div class="stay-copy">
-    <div class="eyebrow">информация именно для вас</div><h2 class="title align-left">Ночёвка в Лукино</h2>
-    <p>Для вас мы предусмотрели размещение в уютном двухэтажном бревенчатом доме у озера Святое. В доме есть спальни, кухня-гостиная, две ванные комнаты, кондиционеры и Wi‑Fi.</p>
-    <ul class="compact-list"><li>Постельное бельё и полотенца</li><li>Кухня, посуда и мангальная зона</li><li>Парковка и озеро рядом</li></ul>
-    <p>Питание гости организуют самостоятельно. Возьмите личные вещи, удобную одежду, купальные принадлежности и тапочки для бани.</p>
-    <p><strong>Точный адрес, распределение мест и время заселения согласуем лично.</strong></p>
-    <div class="rules">В доме нельзя курить и использовать открытый огонь. На территории запрещены салюты и пиротехника. С 22:00 до 9:00 действует режим тишины.</div>
-  </div>
-  <div class="stay-photo" role="img" aria-label="Дом в деревне среди летней зелени"></div>
-</section>
+    <section class="section fun-section" id="fun">
+      <div class="eyebrow">на месте</div>
+      <h2 class="title">Развлечения</h2>
+      <div class="wide-photo entertainment-photo" role="img" aria-label="Баня, чан и бассейн"></div>
+      <div class="feature-grid">
+        <div class="feature"><i data-lucide="waves"></i><strong>Бассейн</strong></div>
+        <div class="feature"><i data-lucide="bath"></i><strong>Чан</strong></div>
+        <div class="feature"><i data-lucide="flame-kindling"></i><strong>Баня</strong></div>
+        <div class="feature"><i data-lucide="volleyball"></i><strong>Волейбол</strong></div>
+        <div class="feature"><i data-lucide="music-2"></i><strong>Музыка и танцы</strong></div>
+        <div class="feature"><i data-lucide="party-popper"></i><strong>Конкурсы</strong></div>
+      </div>
+      <p class="copy">Просим не отсиживаться и участвовать в празднике. Для некоторых конкурсов пригодятся наличные.</p>
+    </section>
 
-<section class="section gifts-section" id="gifts">
-  <div class="flower-corner" aria-hidden="true"></div>
-  <div class="eyebrow">самое простое пожелание</div><h2 class="title">О подарках</h2>
-  <div class="gift-card"><p class="big">Ваше присутствие и хорошее настроение — уже большой подарок.</p><p>Если захотите порадовать нас ещё больше, лучшим подарком станет вклад в наши семейные планы.</p></div>
-</section>
+    <section class="section dress-section" id="dresscode">
+      <article class="simple-card daisy-card">
+        <div class="eyebrow align-left">дресс-код</div>
+        <h2 class="title align-left">Летний стиль</h2>
+        <div class="detail-list compact">
+          <div><i data-lucide="palette"></i><span>Ограничений по цветам нет.</span></div>
+          <div><i data-lucide="shirt"></i><span>Лёгкие платья, сарафаны, рубашки и шорты подходят.</span></div>
+          <div><i data-lucide="cloud-sun"></i><span>Перед поездкой проверьте погоду.</span></div>
+          <div><i data-lucide="footprints"></i><span>Тонкие и высокие каблуки будут неудобны: ходить будем по земле и траве.</span></div>
+        </div>
+      </article>
+    </section>
 
-<section class="section rsvp-section" id="rsvp">
-  <div class="eyebrow">дайте нам знать</div><h2 class="title">Подтвердить участие</h2>
-  <p class="copy">Подтвердите, пожалуйста, что будете с нами 25 июля. Отдельно можно отметить участие в венчании 24 июля.</p>
-  <form class="rsvp-card" id="rsvpForm">
-    <h3 data-rsvp-title>Ждём ваш ответ</h3>
-    <p class="form-help">После нажатия откроется готовое сообщение Владимиру — останется только отправить его.</p>
-    <div class="field" id="nameField"><label for="guestInput">Фамилия и имя / имена гостей</label><input id="guestInput" name="guestName" type="text" autocomplete="name" placeholder="Например: Ивановы Иван и Мария"></div>
-    <label class="check"><input id="churchCheck" type="checkbox"><span>Мы также планируем быть на венчании 24 июля</span></label>
-    <div class="rsvp-actions"><button class="btn primary" type="submit">Подтвердить присутствие</button></div>
-    <div class="status" id="formStatus" role="status" aria-live="polite"></div>
-    <div class="contact">Владимир: <a href="tel:+79969662393">+7 996 966-23-93</a></div>
-  </form>
-</section>
+    <section class="section bring-section" id="bring">
+      <div class="eyebrow">не забудьте</div>
+      <h2 class="title">Что взять с собой</h2>
+      <div class="bring-grid">
+        <div class="bring-item"><i data-lucide="waves"></i><strong>Купальник или плавки</strong></div>
+        <div class="bring-item"><i data-lucide="bath"></i><strong>Полотенце</strong></div>
+        <div class="bring-item"><i data-lucide="footprints"></i><strong>Тапочки для бани</strong></div>
+        <div class="bring-item"><i data-lucide="shoe"></i><strong>Удобную обувь</strong></div>
+        <div class="bring-item"><i data-lucide="cloud-rain"></i><strong>Тёплую вещь или дождевик</strong></div>
+        <div class="bring-item"><i data-lucide="wallet-cards"></i><strong>Немного наличных</strong></div>
+      </div>
+    </section>
 
-<section class="section faq-section" id="faq">
-  <div class="eyebrow">на всякий случай</div><h2 class="title">Вопросы</h2>
-  <div class="faq">
-    <div class="faq-item"><button class="faq-q" type="button"><strong>Что будет, если пойдёт дождь?</strong><span class="faq-plus">+</span></button><div class="faq-a"><p>Основная часть праздника пройдёт под шатром. Всё равно проверьте прогноз и возьмите дождевик, зонт и тёплую вещь, если обещают прохладу.</p></div></div>
-    <div class="faq-item"><button class="faq-q" type="button"><strong>Можно ли приехать на каблуках?</strong><span class="faq-plus">+</span></button><div class="faq-a"><p>Можно, но будет неудобно: во дворе земля и трава. Лучше выбрать устойчивую обувь или обязательно взять сменную.</p></div></div>
-    <div class="faq-item"><button class="faq-q" type="button"><strong>Нужно ли соблюдать цветовую гамму?</strong><span class="faq-plus">+</span></button><div class="faq-a"><p>Нет. Цвета могут быть любыми. Главное — летний, удобный образ и готовность веселиться.</p></div></div>
-    <div class="faq-item"><button class="faq-q" type="button"><strong>Можно ли приехать 26 июля?</strong><span class="faq-plus">+</span></button><div class="faq-a"><p>Конечно. Продолжение открыто для всех желающих, а фиксированного времени сбора нет — приезжайте, когда вам удобно.</p></div></div>
-    <div class="faq-item"><button class="faq-q" type="button"><strong>Где оставить машину?</strong><span class="faq-plus">+</span></button><div class="faq-a"><p>Парковка будет организована во дворе дома по адресу улица Строителей, 8.</p></div></div>
-  </div>
-</section>
+    <section class="section location-section" id="location">
+      <article class="photo-card">
+        <div class="photo address-photo" role="img" aria-label="Село Ермо-Николаевка"></div>
+        <div class="content-card address-content">
+          <div class="eyebrow align-left">адрес и связь</div>
+          <h2 class="title align-left">Ермо-Николаевка</h2>
+          <p class="lead-text">Рязанская область,<br>улица Строителей, дом 8</p>
+          <div class="contact-row"><i data-lucide="phone"></i><div><span>По вопросам</span><a href="tel:+79969662393">Владимир: +7 996 966-23-93</a></div></div>
+          <div class="music-card">
+            <div class="music-head"><span class="icon-box small"><i data-lucide="music"></i></span><div><strong>«Рязань моя»</strong><span>песня от жениха</span></div></div>
+            <button class="music-button" id="musicButton" type="button" aria-label="Включить песню"><i data-lucide="play"></i><span>Включить</span></button>
+            <audio id="ryazanAudio" preload="none" src="assets/ryazan-moya.mp3"></audio>
+            <div class="music-status" id="musicStatus">Аудиофайл будет добавлен позже.</div>
+          </div>
+        </div>
+      </article>
+    </section>
 
-<section class="final">
-  <div class="final-shade"></div>
-  <div class="final-content"><img class="final-logo" src="monogram.svg" alt="ХВ"><h2>Будем счастливы разделить этот день с вами!</h2><p>Ждём вас нарядными, весёлыми и готовыми гулять по-деревенски — от души.</p>
-  <div class="actions"><a class="btn primary" href="#rsvp">Подтвердить участие</a><a class="btn secondary" href="#top">К началу</a></div></div>
-</section>
-</main>
+    <section class="section stay-section" id="stay" data-section-stay hidden>
+      <article class="photo-card">
+        <div class="photo stay-photo" role="img" aria-label="Дом для ночёвки"></div>
+        <div class="content-card daisy-card">
+          <div class="eyebrow align-left">для приезжих гостей</div>
+          <h2 class="title align-left">Ночёвка в Лукино</h2>
+          <p class="body-copy">Для части гостей подготовлен двухэтажный дом рядом с озером Святое. Распределение мест согласуем лично.</p>
+          <ul class="plain-list">
+            <li>до 8 человек;</li>
+            <li>спальни, кухня-гостиная и две ванные комнаты;</li>
+            <li>постельное бельё, полотенца, кондиционеры и Wi‑Fi;</li>
+            <li>парковка, веранда и мангальная зона.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="section gifts-section" id="gifts">
+      <article class="simple-card centered daisy-card">
+        <span class="icon-box"><i data-lucide="gift"></i></span>
+        <div class="eyebrow">подарки</div>
+        <h2 class="title">Лучший вариант</h2>
+        <p class="copy">В качестве подарка будем рады денежному вкладу в наши семейные планы.</p>
+      </article>
+    </section>
+
+    <section class="section rsvp-section" id="rsvp">
+      <div class="eyebrow">сообщите нам</div>
+      <h2 class="title">Подтверждение</h2>
+      <form class="rsvp-card" id="rsvpForm">
+        <h3 data-rsvp-title>Подтвердить присутствие</h3>
+        <p class="form-help">Ответ сохранится в таблице гостей. Если подключение ещё не настроено, откроется сообщение Владимиру.</p>
+        <label class="field" id="nameField"><span>Имя и фамилия</span><input id="guestInput" name="guestName" type="text" placeholder="Например: Иван и Мария Ивановы"></label>
+        <div class="choice-group">
+          <div class="choice-title">Основной день, 25 июля</div>
+          <label class="choice"><input type="radio" name="mainAttendance" value="Будем" checked><span>Будем</span></label>
+          <label class="choice"><input type="radio" name="mainAttendance" value="Не сможем"><span>Не сможем</span></label>
+        </div>
+        <label class="check" data-rsvp-church><input type="checkbox" id="churchCheck"><span>Планируем приехать на венчание 24 июля.</span></label>
+        <label class="check" data-rsvp-afterparty><input type="checkbox" id="afterpartyCheck"><span>Планируем приехать 26 июля.</span></label>
+        <label class="check" data-rsvp-stay hidden><input type="checkbox" id="stayCheck"><span>Нам нужна ночёвка в Лукино.</span></label>
+        <label class="field"><span>Комментарий</span><input id="commentInput" name="comment" type="text" placeholder="Необязательно"></label>
+        <button class="btn primary full" type="submit"><i data-lucide="send"></i><span>Отправить ответ</span></button>
+        <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section class="closing">
+      <div class="closing-shade"></div>
+      <div class="closing-card glass-card">
+        <img class="closing-logo" src="monogram.svg" alt="ХВ">
+        <h2>Ждём вас</h2>
+        <p>25 июля 2026 • Ермо-Николаевка</p>
+        <a class="btn light" href="#top"><i data-lucide="arrow-up"></i><span>К началу</span></a>
+      </div>
+    </section>
+  </main>
 </div>
-<script src="village.js"></script>
 </body>
 </html>
