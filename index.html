@@ -3,14 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#f7f0e5">
+  <meta name="theme-color" content="#f7efe4">
+  <meta name="color-scheme" content="light">
   <title>Свадьба в деревне • ХВ</title>
-  <meta name="description" content="Приглашение на свадьбу Христины и Владимира: 25 июля 2026, село Ермо-Николаевка.">
+  <meta name="description" content="Приглашение на свадьбу Христины и Владимира: 25 июля 2026 года, село Ермо-Николаевка.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Свадьба в деревне • ХВ">
   <meta property="og:description" content="25 июля 2026 • Ермо-Николаевка • сбор гостей в 15:00">
   <meta property="og:url" content="https://step3dlab.github.io/XB/">
   <meta property="og:image" content="https://step3dlab.github.io/XB/og-cover.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Свадьба в деревне • ХВ">
   <meta name="twitter:description" content="25 июля 2026 • Ермо-Николаевка">
@@ -19,23 +22,52 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="village.css">
-  <script defer src="https://unpkg.com/lucide@latest"></script>
   <script defer src="config.js"></script>
   <script defer src="village.js"></script>
 </head>
 <body>
-<div class="page">
+<svg class="icon-sprite" aria-hidden="true">
+  <!-- Tabler Icons, MIT License. The symbols are stored locally so the site does not depend on an icon CDN. -->
+  <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM8 3v4M16 3v4M4 11h16"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.1 7-12a7 7 0 1 0-14 0c0 6.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></symbol>
+  <symbol id="i-tent" viewBox="0 0 24 24"><path d="M3 20 12 4l9 16zM12 4l3 16M9 20l3-7 3 7M2 20h20"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 17h14M6 17v2M18 17v2M4 11l2-5h12l2 5M4 11h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1zM7 14h.01M17 14h.01"/></symbol>
+  <symbol id="i-church" viewBox="0 0 24 24"><path d="M10 21v-6h4v6M4 21h16M5 21V10l7-4 7 4v11M12 2v4M10 4h4M8 12h.01M16 12h.01"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.7"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-waves" viewBox="0 0 24 24"><path d="M3 7c2 0 2 2 4 2s2-2 4-2 2 2 4 2 2-2 4-2 2 2 4 2M3 12c2 0 2 2 4 2s2-2 4-2 2 2 4 2 2-2 4-2 2 2 4 2M3 17c2 0 2 2 4 2s2-2 4-2 2 2 4 2 2-2 4-2 2 2 4 2"/></symbol>
+  <symbol id="i-bath" viewBox="0 0 24 24"><path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM6 19v2M18 19v2M7 12V7a3 3 0 0 1 6 0v1M13 8h3"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7 0-5-4-7-5-11-3 2-5 5-4 8-2-1-3-3-3-5-2 2-3 5-3 8 0 4 3 7 8 7zM10 18c0-2 1-3 3-5 1 2 2 3 2 5a2.5 2.5 0 0 1-5 0z"/></symbol>
+  <symbol id="i-ball" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 6 3M12 3c2 4 2 7 0 9M18 6c-4 0-7 2-8 5M21 12c-4 2-7 2-9 0M18 18c-2-4-4-6-6-6M12 21c-1-4 0-7 2-9M6 18c4 0 6-2 8-6M3 12c3 1 6 0 9-2M6 6c2 3 4 4 7 4"/></symbol>
+  <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></symbol>
+  <symbol id="i-party" viewBox="0 0 24 24"><path d="m4 20 4-12 8 8zM8 8l8 8M13 5l1-2M17 8l3-1M17 12l3 2M10 4 8 2M15 3c3 0 5 2 5 5"/></symbol>
+  <symbol id="i-shirt" viewBox="0 0 24 24"><path d="M8 4c1 2 7 2 8 0l4 2 2 5-4 2v8H6v-8l-4-2 2-5z"/></symbol>
+  <symbol id="i-shoe" viewBox="0 0 24 24"><path d="M5 4c2 6 4 8 9 10l4-1 3 3c1 1 0 4-2 4H7c-3 0-5-2-4-5zM7 12h3M10 14h3"/></symbol>
+  <symbol id="i-rain" viewBox="0 0 24 24"><path d="M7 17a4 4 0 1 1 1-7.9A5 5 0 0 1 18 10a3.5 3.5 0 1 1 0 7H7zM8 20l-1 2M12 20l-1 2M16 20l-1 2"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M4 6h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a3 3 0 0 1 3-3h12M16 12h5v4h-5a2 2 0 0 1 0-4z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 5v16M21 21v-8a2 2 0 0 0-2-2H7a4 4 0 0 0-4 4v2h18M7 11V7h5a2 2 0 0 1 2 2v2"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><path d="M3 9h18v4H3zM5 13v8h14v-8M12 9v12M12 9H7.5A2.5 2.5 0 1 1 10 6.5zM12 9h4.5A2.5 2.5 0 1 0 14 6.5z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="m3 3 18 9-18 9 4-9zM7 12h14"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><path d="M12 2 3 21l9-4 9 4z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></symbol>
+</svg>
+<a class="skip-link" href="#content">К содержанию</a>
+<div class="page" id="top">
   <header class="topbar">
-    <a class="brand" href="#top" aria-label="К началу"><img class="logo" src="monogram.svg" alt="ХВ"></a>
-    <div class="top-date">25 июля 2026</div>
-    <button class="burger" type="button" aria-label="Открыть меню"><span></span></button>
+    <a class="brand" href="#top" aria-label="В начало страницы"><img class="logo" src="monogram.svg" alt="Монограмма ХВ"></a>
+    <div class="top-date" aria-label="Дата свадьбы">25 июля 2026</div>
+    <button class="menu-button" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-menu"><span></span></button>
   </header>
 
-  <nav class="menu" aria-label="Навигация">
-    <a href="#main-day">Основной день</a>
+  <nav class="menu" id="site-menu" aria-label="Навигация по приглашению">
+    <a href="#main-day">Свадьба</a>
     <a href="#church" data-menu-church>Венчание</a>
     <a href="#afterparty" data-menu-afterparty>Продолжение</a>
-    <a href="#fun">Развлечения</a>
+    <a href="#entertainment">Развлечения</a>
     <a href="#dresscode">Дресс-код</a>
     <a href="#bring">Что взять</a>
     <a href="#location">Адрес и контакты</a>
@@ -43,28 +75,28 @@
     <a href="#rsvp">Подтверждение</a>
   </nav>
 
-  <main id="top">
-    <section class="hero">
+  <main id="content">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-shade"></div>
       <span class="hero-daisies" aria-hidden="true"></span>
-      <div class="hero-inner">
+      <div class="hero-layout">
         <div class="hero-card glass-card">
           <div class="hero-kicker">приглашение на свадьбу</div>
-          <h1 class="couple"><span>Христина</span><i>и</i><span>Владимир</span></h1>
+          <h1 class="couple" id="hero-title"><span>Христина</span><i>и</i><span>Владимир</span></h1>
+          <div class="floral-mark" aria-hidden="true"><span></span></div>
           <div class="guest"><span data-salutation>Дорогие</span> <strong data-guest-name>гости</strong></div>
-          <p class="hero-copy" data-hero-copy>Ждём вас 25 июля 2026 года на нашей свадьбе в селе Ермо-Николаевка. Праздник пройдёт во дворе дома, в шатре.</p>
+          <p class="hero-copy" data-hero-copy>Ждём вас 25 июля 2026 года на нашей свадьбе в селе Ермо-Николаевка. Сбор гостей в 15:00. Праздник пройдёт во дворе дома, в шатре.</p>
         </div>
-
-        <div class="hero-facts glass-card">
-          <div class="fact"><i data-lucide="calendar-days"></i><small>дата</small><strong>25 июля 2026</strong><span>суббота</span></div>
-          <div class="fact"><i data-lucide="map-pin"></i><small>адрес</small><strong>Строителей, 8</strong><span>Ермо-Николаевка</span></div>
-          <div class="fact"><i data-lucide="tent-tree"></i><small>формат</small><strong>Во дворе дома</strong><span>под шатром</span></div>
+        <div class="hero-facts glass-card" aria-label="Краткая информация">
+          <div class="fact"><svg class="icon"><use href="#i-calendar"/></svg><small>дата</small><strong>25 июля 2026</strong><span>суббота</span></div>
+          <div class="fact"><svg class="icon"><use href="#i-pin"/></svg><small>место</small><strong>Ермо-Николаевка</strong><span>Строителей, 8</span></div>
+          <div class="fact"><svg class="icon"><use href="#i-tent"/></svg><small>формат</small><strong>Во дворе дома</strong><span>в шатре</span></div>
         </div>
       </div>
     </section>
 
-    <section class="section countdown-section">
-      <div class="eyebrow">до основного дня</div>
+    <section class="section countdown-section" aria-label="Обратный отсчёт">
+      <div class="eyebrow">до свадьбы</div>
       <h2 class="title">Осталось</h2>
       <div class="count-row">
         <div class="count"><strong data-days>—</strong><span>дней</span></div>
@@ -74,68 +106,65 @@
       </div>
     </section>
 
-    <section class="section main-day-section" id="main-day">
+    <section class="section" id="main-day">
       <article class="photo-card">
-        <div class="photo main-day-photo" role="img" aria-label="Двор в деревне"></div>
+        <div class="photo main-day-photo" role="img" aria-label="Двор и свадебный шатёр"></div>
         <div class="content-card">
           <div class="eyebrow align-left">основной день</div>
-          <h2 class="title align-left">25 июля</h2>
+          <h2 class="title align-left">Свадьба — 25 июля</h2>
           <div class="detail-list">
-            <div><i data-lucide="clock-3"></i><span><strong>Сбор гостей — 15:00.</strong></span></div>
-            <div><i data-lucide="map-pinned"></i><span>Рязанская область, село Ермо-Николаевка, улица Строителей, дом 8.</span></div>
-            <div><i data-lucide="tent-tree"></i><span>Праздник пройдёт во дворе дома, в шатре.</span></div>
-            <div><i data-lucide="car-front"></i><span>Машины можно оставить во дворе.</span></div>
+            <div><svg class="icon"><use href="#i-clock"/></svg><span><strong>Сбор гостей — в 15:00.</strong></span></div>
+            <div><svg class="icon"><use href="#i-pin"/></svg><span>Рязанская область, село Ермо-Николаевка, улица Строителей, дом 8.</span></div>
+            <div><svg class="icon"><use href="#i-tent"/></svg><span>Праздник пройдёт во дворе дома, в шатре.</span></div>
+            <div><svg class="icon"><use href="#i-car"/></svg><span>Машины можно оставить во дворе.</span></div>
           </div>
-          <a class="btn primary" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=%D0%A0%D1%8F%D0%B7%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C%2C%20%D1%81%D0%B5%D0%BB%D0%BE%20%D0%95%D1%80%D0%BC%D0%BE-%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%BA%D0%B0%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%2C%208"><i data-lucide="navigation"></i><span>Построить маршрут</span></a>
+          <a class="btn primary" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=%D0%A0%D1%8F%D0%B7%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C%2C%20%D1%81%D0%B5%D0%BB%D0%BE%20%D0%95%D1%80%D0%BC%D0%BE-%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%BA%D0%B0%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%2C%208"><svg class="icon"><use href="#i-route"/></svg><span>Построить маршрут</span></a>
         </div>
       </article>
     </section>
 
     <section class="section optional-section" id="church" data-section-church>
       <article class="simple-card daisy-card">
-        <div class="icon-title"><span class="icon-box"><i data-lucide="church"></i></span><div><div class="eyebrow align-left">для желающих</div><h2 class="title align-left">Венчание</h2></div></div>
-        <p class="lead-text">24 июля 2026 года в храме села Высокие Поляны.</p>
-        <p class="body-copy">Точное время сообщим позже. Все желающие могут приехать и поддержать нас.</p>
-        <a class="btn secondary" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=%D0%A5%D1%80%D0%B0%D0%BC%20%D1%81%D0%B5%D0%BB%D0%B0%20%D0%92%D1%8B%D1%81%D0%BE%D0%BA%D0%B8%D0%B5%20%D0%9F%D0%BE%D0%BB%D1%8F%D0%BD%D1%8B%20%D0%A0%D1%8F%D0%B7%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C"><i data-lucide="map"></i><span>Открыть карту</span></a>
+        <div class="icon-title"><span class="icon-box"><svg class="icon"><use href="#i-church"/></svg></span><div><div class="eyebrow align-left">по желанию</div><h2 class="title align-left">Венчание — 24 июля</h2></div></div>
+        <p class="body-copy strong-copy">Венчание состоится в храме села Высокие Поляны.</p>
+        <p class="body-copy">Точное время сообщим позже. Будем рады всем, кто захочет присоединиться и поддержать нас.</p>
+        <a class="btn secondary" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=%D0%A5%D1%80%D0%B0%D0%BC%20%D1%81%D0%B5%D0%BB%D0%B0%20%D0%92%D1%8B%D1%81%D0%BE%D0%BA%D0%B8%D0%B5%20%D0%9F%D0%BE%D0%BB%D1%8F%D0%BD%D1%8B%20%D0%A0%D1%8F%D0%B7%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C"><svg class="icon"><use href="#i-pin"/></svg><span>Открыть карту</span></a>
       </article>
     </section>
 
-    <section class="section afterparty-section" id="afterparty" data-section-afterparty>
+    <section class="section" id="afterparty" data-section-afterparty>
       <article class="photo-card">
         <div class="photo continuation-photo" role="img" aria-label="Бассейн и река"></div>
         <div class="content-card">
-          <div class="eyebrow align-left">для желающих</div>
-          <h2 class="title align-left">Продолжение 26 июля</h2>
-          <p class="body-copy">Общего времени сбора нет. Приезжайте, когда вам удобно. Будут бассейн, баня, чан и волейбол.</p>
+          <div class="eyebrow align-left">по желанию</div>
+          <h2 class="title align-left">Продолжение — 26 июля</h2>
+          <p class="body-copy">Общего времени сбора нет. Приезжайте, когда вам удобно. Можно будет отдохнуть у бассейна, сходить в баню, погреться в чане и поиграть в волейбол.</p>
         </div>
       </article>
     </section>
 
-    <section class="section fun-section" id="fun">
+    <section class="section entertainment-section" id="entertainment">
       <div class="eyebrow">на месте</div>
       <h2 class="title">Развлечения</h2>
       <div class="wide-photo entertainment-photo" role="img" aria-label="Баня, чан и бассейн"></div>
       <div class="feature-grid">
-        <div class="feature"><i data-lucide="waves"></i><strong>Бассейн</strong></div>
-        <div class="feature"><i data-lucide="bath"></i><strong>Чан</strong></div>
-        <div class="feature"><i data-lucide="flame-kindling"></i><strong>Баня</strong></div>
-        <div class="feature"><i data-lucide="volleyball"></i><strong>Волейбол</strong></div>
-        <div class="feature"><i data-lucide="music-2"></i><strong>Музыка и танцы</strong></div>
-        <div class="feature"><i data-lucide="party-popper"></i><strong>Конкурсы</strong></div>
+        <div class="feature"><svg class="icon"><use href="#i-waves"/></svg><strong>Бассейн</strong></div>
+        <div class="feature"><svg class="icon"><use href="#i-bath"/></svg><strong>Чан</strong></div>
+        <div class="feature"><svg class="icon"><use href="#i-flame"/></svg><strong>Баня</strong></div>
+        <div class="feature"><svg class="icon"><use href="#i-ball"/></svg><strong>Волейбол</strong></div>
+        <div class="feature"><svg class="icon"><use href="#i-music"/></svg><strong>Музыка и танцы</strong></div>
+        <div class="feature"><svg class="icon"><use href="#i-party"/></svg><strong>Конкурсы</strong></div>
       </div>
-      <p class="copy">Просим не отсиживаться и участвовать в празднике. Для некоторых конкурсов пригодятся наличные.</p>
+      <p class="copy">Будем рады вашему участию. Для свадебных конкурсов захватите немного наличных.</p>
     </section>
 
-    <section class="section dress-section" id="dresscode">
+    <section class="section" id="dresscode">
       <article class="simple-card daisy-card">
         <div class="eyebrow align-left">дресс-код</div>
-        <h2 class="title align-left">Летний стиль</h2>
-        <div class="detail-list compact">
-          <div><i data-lucide="palette"></i><span>Ограничений по цветам нет.</span></div>
-          <div><i data-lucide="shirt"></i><span>Лёгкие платья, сарафаны, рубашки и шорты подходят.</span></div>
-          <div><i data-lucide="cloud-sun"></i><span>Перед поездкой проверьте погоду.</span></div>
-          <div><i data-lucide="footprints"></i><span>Тонкие и высокие каблуки будут неудобны: ходить будем по земле и траве.</span></div>
-        </div>
+        <h2 class="title align-left">Летний и удобный</h2>
+        <p class="body-copy strong-copy">Строгого дресс-кода и ограничений по цветам нет.</p>
+        <p class="body-copy">Подойдут лёгкие платья, сарафаны, рубашки, брюки и шорты. Перед поездкой проверьте прогноз и при необходимости возьмите тёплую вещь или дождевик.</p>
+        <p class="note">Высокие тонкие каблуки лучше не надевать: ходить будем по земле и траве.</p>
       </article>
     </section>
 
@@ -143,12 +172,12 @@
       <div class="eyebrow">не забудьте</div>
       <h2 class="title">Что взять с собой</h2>
       <div class="bring-grid">
-        <div class="bring-item"><i data-lucide="waves"></i><strong>Купальник или плавки</strong></div>
-        <div class="bring-item"><i data-lucide="bath"></i><strong>Полотенце</strong></div>
-        <div class="bring-item"><i data-lucide="footprints"></i><strong>Тапочки для бани</strong></div>
-        <div class="bring-item"><i data-lucide="shoe"></i><strong>Удобную обувь</strong></div>
-        <div class="bring-item"><i data-lucide="cloud-rain"></i><strong>Тёплую вещь или дождевик</strong></div>
-        <div class="bring-item"><i data-lucide="wallet-cards"></i><strong>Немного наличных</strong></div>
+        <div class="bring-item"><svg class="icon"><use href="#i-waves"/></svg><strong>Купальник или плавки</strong></div>
+        <div class="bring-item"><svg class="icon"><use href="#i-bath"/></svg><strong>Полотенце</strong></div>
+        <div class="bring-item"><svg class="icon"><use href="#i-shoe"/></svg><strong>Тапочки для бани</strong></div>
+        <div class="bring-item"><svg class="icon"><use href="#i-shoe"/></svg><strong>Удобную обувь</strong></div>
+        <div class="bring-item"><svg class="icon"><use href="#i-rain"/></svg><strong>Тёплую вещь или дождевик</strong></div>
+        <div class="bring-item"><svg class="icon"><use href="#i-wallet"/></svg><strong>Немного наличных</strong></div>
       </div>
     </section>
 
@@ -159,28 +188,29 @@
           <div class="eyebrow align-left">адрес и связь</div>
           <h2 class="title align-left">Ермо-Николаевка</h2>
           <p class="lead-text">Рязанская область,<br>улица Строителей, дом 8</p>
-          <div class="contact-row"><i data-lucide="phone"></i><div><span>По вопросам</span><a href="tel:+79969662393">Владимир: +7 996 966-23-93</a></div></div>
-          <div class="music-card">
-            <div class="music-head"><span class="icon-box small"><i data-lucide="music"></i></span><div><strong>«Рязань моя»</strong><span>песня от жениха</span></div></div>
-            <button class="music-button" id="musicButton" type="button" aria-label="Включить песню"><i data-lucide="play"></i><span>Включить</span></button>
-            <audio id="ryazanAudio" preload="none" src="assets/ryazan-moya.mp3"></audio>
-            <div class="music-status" id="musicStatus">Аудиофайл будет добавлен позже.</div>
+          <div class="contact-row"><svg class="icon"><use href="#i-phone"/></svg><div><span>По организационным вопросам</span><a href="tel:+79969662393">Владимир: +7 996 966-23-93</a></div></div>
+          <div class="music-card" data-music-card>
+            <div class="music-head"><span class="icon-box small"><svg class="icon"><use href="#i-music"/></svg></span><div><strong>«Рязань моя»</strong><span>песня от жениха</span></div></div>
+            <audio id="ryazanAudio" preload="metadata"></audio>
+            <div class="player-row"><button class="music-button" id="musicButton" type="button" aria-label="Включить песню" aria-pressed="false"><svg class="icon icon-play"><use href="#i-play"/></svg><svg class="icon icon-pause"><use href="#i-pause"/></svg></button><input id="musicProgress" class="music-progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Позиция воспроизведения"><span class="music-time"><span id="musicTime">0:00</span><span aria-hidden="true">/</span><span id="musicDuration">—:—</span></span></div>
+            <p class="music-status" id="musicStatus">Песня будет добавлена позже.</p>
           </div>
+          <a class="btn primary full" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=%D0%A0%D1%8F%D0%B7%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C%2C%20%D1%81%D0%B5%D0%BB%D0%BE%20%D0%95%D1%80%D0%BC%D0%BE-%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%BA%D0%B0%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%2C%208"><svg class="icon"><use href="#i-route"/></svg><span>Построить маршрут</span></a>
         </div>
       </article>
     </section>
 
-    <section class="section stay-section" id="stay" data-section-stay hidden>
+    <section class="section" id="stay" data-section-stay hidden>
       <article class="photo-card">
-        <div class="photo stay-photo" role="img" aria-label="Дом для ночёвки"></div>
-        <div class="content-card daisy-card">
+        <div class="photo stay-photo" role="img" aria-label="Дом для ночёвки в Лукино"></div>
+        <div class="content-card">
           <div class="eyebrow align-left">для приезжих гостей</div>
           <h2 class="title align-left">Ночёвка в Лукино</h2>
-          <p class="body-copy">Для части гостей подготовлен двухэтажный дом рядом с озером Святое. Распределение мест согласуем лично.</p>
+          <p class="body-copy">Для части гостей предусмотрен двухэтажный дом рядом с озером Святое. Распределение мест и время заселения согласуем лично.</p>
           <ul class="plain-list">
-            <li>до 8 человек;</li>
+            <li>размещение до 8 человек;</li>
             <li>спальни, кухня-гостиная и две ванные комнаты;</li>
-            <li>постельное бельё, полотенца, кондиционеры и Wi‑Fi;</li>
+            <li>постельное бельё, полотенца, Wi‑Fi и кондиционеры;</li>
             <li>парковка, веранда и мангальная зона.</li>
           </ul>
         </div>
@@ -189,42 +219,33 @@
 
     <section class="section gifts-section" id="gifts">
       <article class="simple-card centered daisy-card">
-        <span class="icon-box"><i data-lucide="gift"></i></span>
+        <span class="icon-box"><svg class="icon"><use href="#i-gift"/></svg></span>
         <div class="eyebrow">подарки</div>
         <h2 class="title">Лучший вариант</h2>
-        <p class="copy">В качестве подарка будем рады денежному вкладу в наши семейные планы.</p>
+        <p class="body-copy">В качестве подарка будем рады денежному вкладу в наши семейные планы.</p>
       </article>
     </section>
 
     <section class="section rsvp-section" id="rsvp">
       <div class="eyebrow">сообщите нам</div>
       <h2 class="title">Подтверждение</h2>
-      <form class="rsvp-card" id="rsvpForm">
-        <h3 data-rsvp-title>Подтвердить присутствие</h3>
-        <p class="form-help">Ответ сохранится в таблице гостей. Если подключение ещё не настроено, откроется сообщение Владимиру.</p>
-        <label class="field" id="nameField"><span>Имя и фамилия</span><input id="guestInput" name="guestName" type="text" placeholder="Например: Иван и Мария Ивановы"></label>
-        <div class="choice-group">
-          <div class="choice-title">Основной день, 25 июля</div>
-          <label class="choice"><input type="radio" name="mainAttendance" value="Будем" checked><span>Будем</span></label>
-          <label class="choice"><input type="radio" name="mainAttendance" value="Не сможем"><span>Не сможем</span></label>
-        </div>
-        <label class="check" data-rsvp-church><input type="checkbox" id="churchCheck"><span>Планируем приехать на венчание 24 июля.</span></label>
-        <label class="check" data-rsvp-afterparty><input type="checkbox" id="afterpartyCheck"><span>Планируем приехать 26 июля.</span></label>
-        <label class="check" data-rsvp-stay hidden><input type="checkbox" id="stayCheck"><span>Нам нужна ночёвка в Лукино.</span></label>
+      <form class="rsvp-card" id="rsvpForm" novalidate>
+        <h3 data-rsvp-heading>Подтвердить присутствие</h3>
+        <p class="form-help">Укажите, сможете ли вы приехать. Для венчания и продолжения предусмотрены отдельные отметки.</p>
+        <label class="field" id="nameField"><span>Имя и фамилия</span><input id="guestInput" name="guestName" type="text" autocomplete="name" placeholder="Например: Иван и Мария Ивановы"><span class="field-error" id="nameError" aria-live="polite"></span></label>
+        <fieldset class="choice-group"><legend>Свадьба, 25 июля</legend><label class="choice"><input type="radio" name="mainAttendance" value="Будем" checked><span>Будем</span></label><label class="choice"><input type="radio" name="mainAttendance" value="Не сможем"><span>Не сможем</span></label></fieldset>
+        <label class="check" data-rsvp-church><input id="churchCheck" type="checkbox"><span>Планируем приехать на венчание 24 июля.</span></label>
+        <label class="check" data-rsvp-afterparty><input id="afterpartyCheck" type="checkbox"><span>Планируем приехать 26 июля.</span></label>
+        <label class="check" data-rsvp-stay hidden><input id="stayCheck" type="checkbox"><span>Нам нужна ночёвка в Лукино.</span></label>
         <label class="field"><span>Комментарий</span><input id="commentInput" name="comment" type="text" placeholder="Необязательно"></label>
-        <button class="btn primary full" type="submit"><i data-lucide="send"></i><span>Отправить ответ</span></button>
+        <button class="btn primary full submit-button" id="submitButton" type="submit"><svg class="icon"><use href="#i-send"/></svg><span>Отправить ответ</span></button>
         <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
       </form>
     </section>
 
     <section class="closing">
       <div class="closing-shade"></div>
-      <div class="closing-card glass-card">
-        <img class="closing-logo" src="monogram.svg" alt="ХВ">
-        <h2>Ждём вас</h2>
-        <p>25 июля 2026 • Ермо-Николаевка</p>
-        <a class="btn light" href="#top"><i data-lucide="arrow-up"></i><span>К началу</span></a>
-      </div>
+      <div class="closing-card glass-card"><img class="closing-logo" src="monogram.svg" alt=""><h2>До встречи</h2><p>25 июля 2026 • Ермо-Николаевка</p><a class="btn light full" href="#top"><svg class="icon"><use href="#i-up"/></svg><span>К началу</span></a></div>
     </section>
   </main>
 </div>
