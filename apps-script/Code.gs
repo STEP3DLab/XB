@@ -1,3 +1,5 @@
+const SPREADSHEET_ID = '19jAF-t281LpO0XlkYnX6t0p5CqJCTGJ1Ub7ZRLqR9IM';
+
 const SHEETS = {
   guests: 'Гости',
   scenarios: 'Сценарии',
@@ -5,7 +7,14 @@ const SHEETS = {
   settings: 'Настройки'
 };
 
-const DEFAULT_HERO_COPY = 'Ждём вас 25 июля 2026 года на нашей свадьбе в селе Ермо-Николаевка. Праздник пройдёт во дворе дома, в шатре.';
+const DEFAULT_HERO_COPY =
+  'Ждём вас 25 июля 2026 года в селе Ермо-Николаевка. ' +
+  'Сбор гостей — в 15:00. Праздник пройдёт во дворе дома.';
+
+
+function getSpreadsheet_() {
+  return SpreadsheetApp.openById(SPREADSHEET_ID);
+}
 
 function onOpen() {
   SpreadsheetApp.getUi()
@@ -16,22 +25,28 @@ function onOpen() {
 }
 
 function setupWeddingWorkbook() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = getSpreadsheet_();
+
   ensureSheet_(ss, SHEETS.guests, [
-    'id', 'Обращение', 'Имя', 'Сценарий', 'Именное (override)',
-    'Венчание (override)', 'Продолжение (override)', 'Ночёвка (override)',
-    'Персональный текст', 'Активно', 'Ссылка', 'Кому отправлено',
-    'Статус рассылки', 'Комментарий'
+    'id', 'Обращение', 'Имя', 'Сценарий',
+    'Именное (override)', 'Венчание (override)',
+    'Продолжение (override)', 'Ночёвка (override)',
+    'Персональный текст', 'Активно', 'Ссылка',
+    'Кому отправлено', 'Статус рассылки', 'Комментарий'
   ]);
+
   ensureSheet_(ss, SHEETS.scenarios, [
-    'scenario', 'Описание', 'Именное', 'Показывать венчание',
-    'Показывать продолжение', 'Показывать ночёвку'
+    'scenario', 'Описание', 'Именное',
+    'Показывать венчание', 'Показывать продолжение',
+    'Показывать ночёвку'
   ]);
+
   ensureSheet_(ss, SHEETS.responses, [
-    'Дата и время', 'id', 'Сценарий', 'Обращение', 'Гости',
-    '25 июля', 'Венчание 24 июля', 'Продолжение 26 июля',
+    'Дата и время', 'id', 'Сценарий', 'Обращение',
+    'Гости', '25 июля', 'Венчание 24 июля',
     'Ночёвка', 'Комментарий', 'Источник'
   ]);
+
   ensureSheet_(ss, SHEETS.settings, ['Ключ', 'Значение', 'Описание']);
   refreshGuestLinks();
   SpreadsheetApp.getUi().alert('Структура таблицы проверена.');
@@ -56,53 +71,59 @@ function onEdit(e) {
 }
 
 function refreshGuestLinks() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = getSpreadsheet_();
   const sheet = ss.getSheetByName(SHEETS.guests);
   if (!sheet || sheet.getLastRow() < 2) return;
-  for (let row = 2; row <= sheet.getLastRow(); row++) updateGuestLinkRow_(sheet, row);
+  for (let row = 2; row <= sheet.getLastRow(); row++) {
+    updateGuestLinkRow_(sheet, row);
+  }
 }
 
 function updateGuestLinkRow_(sheet, row) {
   const id = String(sheet.getRange(row, 1).getDisplayValue() || '').trim();
   const active = String(sheet.getRange(row, 10).getDisplayValue() || 'Да').trim();
-  const baseUrl = getSetting_('base_url') || 'https://step3dlab.github.io/XB/';
+  const baseUrl = getSetting_('base_url') ||
+    'https://raw.githack.com/STEP3DLab/XB/village-wedding/index.html';
   const linkCell = sheet.getRange(row, 11);
+
   if (!id || !isYes_(active)) {
     linkCell.clearContent();
     return;
   }
-  linkCell.setValue(baseUrl + (baseUrl.indexOf('?') === -1 ? '?' : '&') + 'guest=' + encodeURIComponent(id));
+
+  const separator = baseUrl.indexOf('?') === -1 ? '?' : '&';
+  linkCell.setValue(baseUrl + separator + 'guest=' + encodeURIComponent(id));
 }
 
 function doGet(e) {
   const params = (e && e.parameter) || {};
   const action = String(params.action || 'health').toLowerCase();
-  let payload;
 
   if (action === 'guest') {
     const id = String(params.id || '').trim();
     const guest = getGuestById_(id);
-    payload = guest
-      ? { ok: true, guest: guest }
-      : { ok: false, error: 'guest_not_found', id: id };
-  } else {
-    payload = {
-      ok: true,
-      service: 'XB village wedding',
-      timestamp: new Date().toISOString()
-    };
+    return output_(
+      guest
+        ? { ok: true, guest: guest }
+        : { ok: false, error: 'guest_not_found', id: id },
+      params.callback
+    );
   }
 
-  return output_(payload, params.callback);
+  return output_({
+    ok: true,
+    service: 'XB village wedding',
+    timestamp: new Date().toISOString()
+  }, params.callback);
 }
 
 function doPost(e) {
   try {
     const payload = parsePayload_(e);
-    const ss = SpreadsheetApp.getActiveSpreadsheet();
+    const ss = getSpreadsheet_();
     const sheet = ensureSheet_(ss, SHEETS.responses, [
-      'Дата и время', 'id', 'Сценарий', 'Обращение', 'Гости',
-      '25 июля', 'Венчание 24 июля', 'Продолжение 26 июля',
+      'Дата и время', 'id', 'Сценарий', 'Обращение',
+      'Гости', '25 июля', 'Венчание 24 июля',
       'Ночёвка', 'Комментарий', 'Источник'
     ]);
 
@@ -117,7 +138,6 @@ function doPost(e) {
         safe_(payload.guestName),
         safe_(payload.mainAttendance),
         safe_(payload.church),
-        safe_(payload.afterparty),
         safe_(payload.stay),
         safe_(payload.comment),
         safe_(payload.source)
@@ -128,7 +148,10 @@ function doPost(e) {
 
     return output_({ ok: true });
   } catch (error) {
-    return output_({ ok: false, error: String(error && error.message || error) });
+    return output_({
+      ok: false,
+      error: String(error && error.message || error)
+    });
   }
 }
 
@@ -137,45 +160,64 @@ function parsePayload_(e) {
   if (e.postData && e.postData.contents) {
     try {
       return JSON.parse(e.postData.contents);
-    } catch (ignore) {
-      // Ниже используются обычные параметры формы.
-    }
+    } catch (ignore) {}
   }
   return e.parameter || {};
 }
 
 function getGuestById_(id) {
   if (!id) return null;
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+
+  const ss = getSpreadsheet_();
   const guestSheet = ss.getSheetByName(SHEETS.guests);
   if (!guestSheet || guestSheet.getLastRow() < 2) return null;
 
-  const guests = sheetObjects_(guestSheet);
-  const row = guests.find(item => String(item.id || '').trim() === id);
+  const row = sheetObjects_(guestSheet)
+    .find(item => String(item.id || '').trim() === id);
+
   if (!row || !isYes_(row['Активно'] || 'Да')) return null;
 
   const scenario = getScenarioByName_(row['Сценарий']);
+
   return {
     id: String(row.id || '').trim(),
     salutation: String(row['Обращение'] || 'Дорогие').trim(),
     name: String(row['Имя'] || 'гости').trim(),
     scenario: String(row['Сценарий'] || 'general-home').trim(),
     named: resolveOverride_(row['Именное (override)'], scenario.named),
-    showChurch: resolveOverride_(row['Венчание (override)'], scenario.showChurch),
-    showAfterparty: resolveOverride_(row['Продолжение (override)'], scenario.showAfterparty),
-    showStay: resolveOverride_(row['Ночёвка (override)'], scenario.showStay),
-    heroCopy: String(row['Персональный текст'] || DEFAULT_HERO_COPY).trim()
+    showChurch: resolveOverride_(
+      row['Венчание (override)'], scenario.showChurch
+    ),
+    showAfterparty: resolveOverride_(
+      row['Продолжение (override)'], scenario.showAfterparty
+    ),
+    showStay: resolveOverride_(
+      row['Ночёвка (override)'], scenario.showStay
+    ),
+    heroCopy: String(
+      row['Персональный текст'] || DEFAULT_HERO_COPY
+    ).trim()
   };
 }
 
 function getScenarioByName_(name) {
-  const defaults = { named: false, showChurch: true, showAfterparty: true, showStay: false };
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const defaults = {
+    named: false,
+    showChurch: true,
+    showAfterparty: true,
+    showStay: false
+  };
+
+  const ss = getSpreadsheet_();
   const sheet = ss.getSheetByName(SHEETS.scenarios);
   if (!sheet || sheet.getLastRow() < 2) return defaults;
-  const scenarios = sheetObjects_(sheet);
-  const row = scenarios.find(item => String(item.scenario || '').trim() === String(name || '').trim());
+
+  const row = sheetObjects_(sheet).find(item =>
+    String(item.scenario || '').trim() === String(name || '').trim()
+  );
+
   if (!row) return defaults;
+
   return {
     named: isYes_(row['Именное']),
     showChurch: isYes_(row['Показывать венчание']),
@@ -193,35 +235,50 @@ function resolveOverride_(value, fallback) {
 function sheetObjects_(sheet) {
   const values = sheet.getDataRange().getDisplayValues();
   if (!values.length) return [];
+
   const headers = values[0];
-  return values.slice(1).filter(row => row.some(Boolean)).map(row => {
-    const item = {};
-    headers.forEach((header, index) => item[header] = row[index]);
-    return item;
-  });
+
+  return values.slice(1)
+    .filter(row => row.some(Boolean))
+    .map(row => {
+      const item = {};
+      headers.forEach((header, index) => item[header] = row[index]);
+      return item;
+    });
 }
 
 function getSetting_(key) {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = getSpreadsheet_();
   const sheet = ss.getSheetByName(SHEETS.settings);
   if (!sheet || sheet.getLastRow() < 2) return '';
-  const rows = sheet.getRange(2, 1, sheet.getLastRow() - 1, 2).getDisplayValues();
+
+  const rows = sheet.getRange(
+    2, 1, sheet.getLastRow() - 1, 2
+  ).getDisplayValues();
+
   const found = rows.find(row => String(row[0] || '').trim() === key);
   return found ? String(found[1] || '').trim() : '';
 }
 
 function isYes_(value) {
-  return ['да', 'yes', 'true', '1', 'on'].indexOf(String(value || '').trim().toLowerCase()) !== -1;
+  return ['да', 'yes', 'true', '1', 'on']
+    .indexOf(String(value || '').trim().toLowerCase()) !== -1;
 }
 
 function safe_(value) {
-  return value === undefined || value === null ? '' : String(value).slice(0, 5000);
+  return value === undefined || value === null
+    ? ''
+    : String(value).slice(0, 5000);
 }
 
 function output_(payload, callback) {
   const json = JSON.stringify(payload);
-  const safeCallback = String(callback || '').replace(/[^a-zA-Z0-9_.$]/g, '');
+  const safeCallback = String(callback || '')
+    .replace(/[^a-zA-Z0-9_.$]/g, '');
   const text = safeCallback ? safeCallback + '(' + json + ')' : json;
-  const mime = safeCallback ? ContentService.MimeType.JAVASCRIPT : ContentService.MimeType.JSON;
+  const mime = safeCallback
+    ? ContentService.MimeType.JAVASCRIPT
+    : ContentService.MimeType.JSON;
+
   return ContentService.createTextOutput(text).setMimeType(mime);
 }

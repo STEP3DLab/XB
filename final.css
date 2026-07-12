@@ -1,0 +1,76 @@
+
+/* Финальная мобильная компоновка первого экрана и фото-разделителей */
+:root{
+  --hero-image:url('assets/hero.jpg');
+  --separator-image:url('assets/daisy-strip.jpg');
+}
+.hero{
+  width:100%;
+  aspect-ratio:941/1672;
+  min-height:0;
+  background-image:var(--hero-image);
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+.hero-layout{
+  position:relative;
+  z-index:3;
+  width:100%;
+  height:100%;
+  display:grid;
+  grid-template-rows:minmax(0,1fr) auto;
+  align-items:center;
+  gap:clamp(14px,3.6vw,22px);
+  padding:clamp(54px,13vw,92px) clamp(14px,4vw,22px) clamp(15px,3.8vw,24px);
+}
+.hero-card{
+  position:static;
+  top:auto;
+  left:auto;
+  transform:none;
+  width:min(82%,390px);
+  height:auto;
+  min-height:0;
+  justify-self:center;
+  align-self:center;
+  padding:clamp(25px,5.8vw,36px) clamp(16px,4.6vw,25px) clamp(23px,5.4vw,34px);
+}
+.hero-facts{
+  position:static;
+  left:auto;
+  right:auto;
+  bottom:auto;
+  width:100%;
+  height:auto;
+  min-height:clamp(108px,27vw,136px);
+  align-self:end;
+  padding:clamp(11px,2.8vw,16px) 5px;
+  border-radius:clamp(24px,6vw,34px);
+}
+.hero-daisies{display:none!important}
+.separator{
+  height:clamp(66px,19vw,96px);
+  background-image:var(--separator-image);
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+.separator.narrow{height:clamp(54px,15vw,76px)}
+.closing{
+  min-height:clamp(480px,132vw,620px);
+  background-image:var(--hero-image);
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+@media(max-width:410px){
+  .hero-card{width:83%}
+  .hero-copy{max-width:300px}
+  .fact strong{font-size:clamp(13px,4vw,17px)}
+}
+@media(max-width:340px){
+  .hero-layout{padding-left:11px;padding-right:11px}
+  .hero-card{width:86%}
+  .couple{font-size:clamp(43px,13vw,50px)}
+}
